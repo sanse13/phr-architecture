@@ -1,33 +1,33 @@
 <div class="grid grid-cols-1 gap-4">
   <div class="relative cursor-pointer group">
-    <img src="render final alzado.jpg" alt="render photo" class="fit-content" />
+    <img src="2/render1.jpg" alt="render photo" class="fit-content" />
   </div>
 
   <hr class="h-4" />
 
   <div class="grid grid-cols-2 gap-4">
-    <div class="relative cursor-pointer group">
+    <div class="relative cursor-pointer group" [routerLink]="['gallery', 1]">
       <img
-        src="trasteo con photoshop.jpg"
+        src="1/render1.png"
         alt="photoshop render"
-        class="fit-content group-hover:opacity-70 transition-opacity duration-300"
+        class="object-cover h-96 w-full group-hover:opacity-70 transition-opacity duration-300"
       />
       <div
         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
       >
-        Ver proyecto
+        Proyectos IV: Rehabilitación de Cuartel
       </div>
     </div>
-    <div class="relative cursor-pointer group">
+    <div class="relative cursor-pointer group" [routerLink]="['gallery', 2]">
       <img
-        src="HERNANDEZREQUESPABLO_E3.jpg"
+        src="2/render2.jpg"
         alt="another render"
-        class="fit-content group-hover:opacity-70 transition-opacity duration-300"
+        class="object-cover h-96 w-full group-hover:opacity-70 transition-opacity duration-300"
       />
       <div
         class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
       >
-        Ver proyecto
+        Modelado de Entornos: Modelados Icónicos
       </div>
     </div>
   </div>

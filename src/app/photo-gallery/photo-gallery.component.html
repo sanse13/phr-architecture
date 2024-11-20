@@ -1,0 +1,24 @@
+<div class="flex flex-col items-center justify-center h-auto bg-gray-100 mt-4">
+  <div class="w-full max-w-[100rem] px-4">
+    <img
+      [ngSrc]="currentImage.src"
+      [alt]="currentImage.alt"
+      class="w-full h-[50rem] rounded-lg shadow-lg border-2 border-gray-300"
+      width="1000"
+      height="1000"
+    />
+  </div>
+
+  <div class="flex justify-between mt-4 space-x-12 mb-2">
+    <ng-icon
+      (click)="previousImage()"
+      name="bootstrapArrowLeftCircle"
+      class="cursor-pointer text-neutral-500 hover:text-neutral-700 text-4xl rounded-lg"
+    />
+    <ng-icon
+      name="bootstrapArrowRightCircle"
+      class="cursor-pointer text-4xl text-neutral-500 hover:text-neutral-700"
+      (click)="nextImage()"
+    />
+  </div>
+</div>
