@@ -1,0 +1,25 @@
+<div
+  class="mx-auto flex justify-center my-12 flex-col self-center items-center"
+>
+  <div
+    class="border rounded-lg shadow w-full sm:w-1/3 border-neutral-300 p-4 animate-fall"
+  >
+    <span class="flex justify-center text-center text-lg text-neutral-700">
+      Pablo Hernández Reques
+    </span>
+    <div class="flex justify-center my-4">
+      <img
+        src="pablo-photo.jpeg"
+        alt="Random User"
+        class="rounded-full w-24 h-24 object-cover"
+      />
+    </div>
+    <hr class="my-4" />
+    <p class="text-neutral-500 text-base transform ease-in-out">
+      {{ biography }}
+    </p>
+  </div>
+  <div class="mt-12 animate-slide-up">
+    <app-timeline />
+  </div>
+</div>
