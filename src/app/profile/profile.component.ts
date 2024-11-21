@@ -29,6 +29,6 @@ export class ProfileComponent implements OnInit {
       this.showCard = true;
       this.translateY = true;
       this.opacity = true;
-    }, 100); // Ajusta el tiempo de espera según prefieras.
+    }, 100);
   }
 }

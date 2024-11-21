@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [NgClass, NgIcon, RouterLink],
+  imports: [NgIcon, RouterLink],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   viewProviders: [provideIcons({ bootstrapHouse, bootstrapPersonVcard })],
@@ -31,11 +31,9 @@ export class SidebarComponent {
     const sidebarElement = this.sidebar.nativeElement;
 
     if (this.isSideBarOpen) {
-      // Muestra la barra lateral con una transición
       sidebarElement.style.transition = 'transform 0.5s ease-in-out';
       sidebarElement.style.transform = 'translateX(0)';
     } else {
-      // Oculta la barra lateral con una transición
       sidebarElement.style.transition = 'transform 0.5s ease-in-out';
       sidebarElement.style.transform = 'translateX(100%)';
     }
