@@ -1,7 +1,10 @@
 import {
   Component,
+  DestroyRef,
   ElementRef,
   EventEmitter,
+  HostListener,
+  inject,
   input,
   Output,
   ViewChild,
@@ -13,6 +16,8 @@ import {
   bootstrapPersonVcard,
 } from '@ng-icons/bootstrap-icons';
 import { RouterLink } from '@angular/router';
+import { SidebarService } from '../sidebar.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-sidebar',
@@ -25,6 +30,19 @@ import { RouterLink } from '@angular/router';
 export class SidebarComponent {
   isSideBarOpen = false;
   @ViewChild('sidebar') sidebar!: ElementRef;
+
+  constructor(private readonly sideBarService: SidebarService) {
+    this.sideBarService
+      .getSideBarStatus()
+      .pipe(takeUntilDestroyed())
+      .subscribe((status) => {
+        if (!status) {
+          const sidebarElement = this.sidebar.nativeElement;
+          sidebarElement.style.transition = 'transform 0.5s ease-in-out';
+          sidebarElement.style.transform = 'translateX(100%)';
+        }
+      });
+  }
 
   handleSideBarCloseButton(): void {
     this.isSideBarOpen = !this.isSideBarOpen;
