@@ -37,9 +37,11 @@ export class SidebarComponent {
       .pipe(takeUntilDestroyed())
       .subscribe((status) => {
         if (!status) {
-          const sidebarElement = this.sidebar.nativeElement;
-          sidebarElement.style.transition = 'transform 0.5s ease-in-out';
-          sidebarElement.style.transform = 'translateX(100%)';
+          if (this.sidebar) {
+            const sidebarElement = this.sidebar.nativeElement;
+            sidebarElement.style.transition = 'transform 0.5s ease-in-out';
+            sidebarElement.style.transform = 'translateX(100%)';
+          }
         }
       });
   }

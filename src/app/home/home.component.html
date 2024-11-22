@@ -1,11 +1,11 @@
-<div class="grid grid-cols-1">
+<div class="w-full">
   <div class="relative">
     <img
       src="2/PORTADA.jpg"
       alt="render photo"
       class="fade-in-image opacity-0 transition-opacity ease-in-out sm:h-screen h-auto w-full"
     />
-    <app-pop-over (click)="scrollIntoView()" />
+    <app-pop-over class="hidden sm:block" (click)="scrollIntoView()" />
   </div>
 
   <div #imageSection class="grid grid-cols-2">
