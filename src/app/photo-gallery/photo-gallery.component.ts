@@ -5,6 +5,8 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
   bootstrapArrowLeftCircle,
   bootstrapArrowRightCircle,
+  bootstrapChevronLeft,
+  bootstrapChevronRight,
 } from '@ng-icons/bootstrap-icons';
 
 interface Image {
@@ -20,7 +22,7 @@ interface Image {
   styleUrls: ['./photo-gallery.component.scss'],
   viewProviders: [
     NgOptimizedImage,
-    provideIcons({ bootstrapArrowLeftCircle, bootstrapArrowRightCircle }),
+    provideIcons({ bootstrapChevronLeft, bootstrapChevronRight }),
   ],
 })
 export class PhotoGalleryComponent implements OnInit {
