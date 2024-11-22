@@ -3,12 +3,16 @@
     <img
       src="2/PORTADA.jpg"
       alt="render photo"
-      class="fit-content sm:h-screen h-auto w-full"
+      class="fade-in-image opacity-0 transition-opacity duration-1000 ease-in-out sm:h-screen h-auto w-full"
     />
     <app-pop-over (click)="scrollIntoView()" />
   </div>
+
   <div #imageSection class="grid grid-cols-2">
-    <div class="relative cursor-pointer group" [routerLink]="['gallery', 1]">
+    <div
+      class="relative cursor-pointer group fade-in-image opacity-0 transition-opacity duration-1000 ease-in-out"
+      [routerLink]="['gallery', 1]"
+    >
       <img
         src="1/portada.jpg"
         alt="photoshop render"
@@ -20,7 +24,10 @@
         Proyectos IV: Rehabilitación de Cuartel
       </div>
     </div>
-    <div class="relative cursor-pointer group" [routerLink]="['gallery', 2]">
+    <div
+      class="relative cursor-pointer group fade-in-image opacity-0 transition-opacity duration-1000 ease-in-out"
+      [routerLink]="['gallery', 2]"
+    >
       <img
         src="2/PORTADA.jpg"
         alt="another render"
@@ -35,7 +42,10 @@
   </div>
 
   <div class="grid grid-cols-1">
-    <div class="relative cursor-pointer group" [routerLink]="['gallery', 3]">
+    <div
+      class="relative cursor-pointer group fade-in-image opacity-0 transition-opacity duration-1000 ease-in-out"
+      [routerLink]="['gallery', 3]"
+    >
       <img
         src="3/PORTADA.jpg"
         alt="Portada proyecto"
@@ -50,7 +60,10 @@
   </div>
 
   <div class="grid grid-cols-2">
-    <div class="relative cursor-pointer group" [routerLink]="['gallery', 4]">
+    <div
+      class="relative cursor-pointer group fade-in-image opacity-0 transition-opacity duration-1000 ease-in-out"
+      [routerLink]="['gallery', 4]"
+    >
       <img
         src="4/PORTADA.jpg"
         alt="Arquitectura Efímera"
@@ -62,7 +75,10 @@
         Arquitectura Efímera: CRAI
       </div>
     </div>
-    <div class="relative cursor-pointer group" [routerLink]="['gallery', 5]">
+    <div
+      class="relative cursor-pointer group fade-in-image opacity-0 transition-opacity duration-1000 ease-in-out"
+      [routerLink]="['gallery', 5]"
+    >
       <img
         src="5/PORTADA.jpg"
         alt="another render"
