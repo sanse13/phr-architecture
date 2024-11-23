@@ -11,7 +11,7 @@ import { TimelineComponent } from '../timeline/timeline.component';
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [TimelineComponent],
+  imports: [],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
 })

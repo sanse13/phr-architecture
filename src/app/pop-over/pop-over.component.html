@@ -3,7 +3,10 @@
   (mouseenter)="showPopover = true"
   (mouseleave)="showPopover = false"
 >
-  <ng-icon name="bootstrapChevronDown" class="text-5xl text-neutral-800"></ng-icon>
+  <ng-icon
+    name="bootstrapChevronDown"
+    class="text-5xl text-neutral-800"
+  ></ng-icon>
   <div
     class="absolute z-10 transition-opacity duration-300 opacity-80 bg-gray-300 border border-gray-400 rounded-lg shadow-lg text-center px-4 py-2 w-32 text-sm text-gray-500"
     [class.invisible]="!showPopover"

@@ -9,7 +9,7 @@ module.exports = {
     },
     colors: {
       primary: "#a33e4b",
-    }
+    },
   },
   plugins: [require("flowbite/plugin")],
 };
