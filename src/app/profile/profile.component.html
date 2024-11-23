@@ -1,61 +1,84 @@
-<div class="grid grid-cols-2 pt-[7.5rem] animate-fall">
+<div class="grid sm:grid-cols-2 grid-cols-1 pt-[7.5rem] animate-fall">
   <div class="ml-12 flex flex-col justify-between">
     <div>
       <h1 class="text-4xl font-bold">BIO</h1>
-      <p class="mt-8 font-semibold whitespace-pre-line pr-52">
+      <p class="mt-8 font-semibold whitespace-pre-line sm:pr-52">
         {{ biography }}
       </p>
     </div>
 
-    <div>
+    <div class="hidden md:block">
       <h2 class="mt-8 text-2xl font-bold">Aptitudes y conocimientos</h2>
       <div class="mt-4 space-y-2">
-        <li class="ml-12 grid grid-cols-2">
-          <span class="text-lg font-semibold">Autocad</span>
-          <app-progress-bar [barWidth]="85" />
-        </li>
+        <div class="grid sm:grid-cols-2 grid-cols-1">
+          <div>
+            <li class="sm:ml-12 grid grid-cols-2">
+              <span class="text-sm font-semibold">Autocad</span>
+              <app-progress-bar [barWidth]="100" />
+            </li>
+          </div>
+          <div>
+            <li class="sm:ml-12 grid grid-cols-2">
+              <span class="text-sm font-semibold">RhinoCeros 6 + V-ray</span>
+              <app-progress-bar [barWidth]="100" />
+            </li>
+          </div>
+        </div>
 
-        <li class="ml-12 grid grid-cols-2">
-          <span class="text-lg font-semibold">RhinoCeros 6 + V-ray</span>
-          <app-progress-bar [barWidth]="85" />
-        </li>
+        <div class="grid sm:grid-cols-2 grid-cols-1">
+          <div>
+            <li class="sm:ml-12 grid grid-cols-2">
+              <span class="text-sm font-semibold">3ds Max</span>
+              <app-progress-bar [barWidth]="95" />
+            </li>
+          </div>
+          <div>
+            <li class="sm:ml-12 grid grid-cols-2">
+              <span class="text-sm font-semibold">Photoshop</span>
+              <app-progress-bar [barWidth]="90" />
+            </li>
+          </div>
+        </div>
 
-        <li class="ml-12 grid grid-cols-2">
-          <span class="text-lg font-semibold">3ds Max</span>
-          <app-progress-bar [barWidth]="80" />
-        </li>
+        <div class="grid sm:grid-cols-2 grid-cols-1">
+          <div>
+            <li class="sm:ml-12 grid grid-cols-2">
+              <span class="text-sm font-semibold">Adobe InDesign</span>
+              <app-progress-bar [barWidth]="85" />
+            </li>
+          </div>
+          <div>
+            <li class="sm:ml-12 grid grid-cols-2">
+              <span class="text-sm font-semibold">Adobe Lightroom</span>
+              <app-progress-bar [barWidth]="80" />
+            </li>
+          </div>
+        </div>
 
-        <li class="ml-12 grid grid-cols-2">
-          <span class="text-lg font-semibold">Photoshop</span>
-          <app-progress-bar [barWidth]="75" />
-        </li>
-
-        <li class="ml-12 grid grid-cols-2">
-          <span class="text-lg font-semibold">Adobe InDesign</span>
-          <app-progress-bar [barWidth]="65" />
-        </li>
-
-        <li class="ml-12 grid grid-cols-2">
-          <span class="text-lg font-semibold">Adobe Lightroom</span>
-          <app-progress-bar [barWidth]="60" />
-        </li>
-
-        <li class="ml-12 grid grid-cols-2">
-          <span class="text-lg font-semibold">Adobe Illustrator</span>
-          <app-progress-bar [barWidth]="60" />
-        </li>
-        <li class="ml-12 grid grid-cols-2">
-          <span class="text-lg font-semibold">Revit</span>
-          <app-progress-bar [barWidth]="55" />
-        </li>
+        <div class="grid sm:grid-cols-2 grid-cols-1">
+          <div>
+            <li class="sm:ml-12 grid grid-cols-2">
+              <span class="text-sm font-semibold">Adobe Illustrator</span>
+              <app-progress-bar [barWidth]="80" />
+            </li>
+          </div>
+          <div>
+            <li class="sm:ml-12 grid grid-cols-2">
+              <span class="text-sm font-semibold">Revit</span>
+              <app-progress-bar [barWidth]="75" />
+            </li>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="flex justify-end">
-    <img
-      src="profile.jpg"
-      alt="Profile photo"
-      class="w-[46rem] h-[44rem] select-none focus:outline-none"
-    />
+  <div class="flex justify-end mt-4">
+    <div class="max-w-full">
+      <img
+        src="profile.jpg"
+        alt="Profile photo"
+        class="w-full max-w-[46rem] h-auto object-contain select-none focus:outline-none"
+      />
+    </div>
   </div>
 </div>
