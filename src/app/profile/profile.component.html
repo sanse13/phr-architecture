@@ -1,22 +1,61 @@
-<div
-  class="mx-auto flex justify-center pt-20 flex-col self-center items-center font-bold"
->
-  <div
-    class="border rounded-lg shadow w-full sm:w-1/3 border-neutral-300 p-4 animate-fall"
-  >
-    <span class="flex justify-center text-center text-lg text-neutral-700">
-      Pablo Hernández Reques
-    </span>
-    <div class="flex justify-center my-4">
-      <img
-        src="pablo-photo.jpeg"
-        alt="Random User"
-        class="rounded-full w-24 h-24 object-cover"
-      />
+<div class="grid grid-cols-2 pt-[7.5rem] animate-fall">
+  <div class="ml-12 flex flex-col justify-between">
+    <div>
+      <h1 class="text-4xl font-bold">BIO</h1>
+      <p class="mt-8 font-semibold whitespace-pre-line pr-52">
+        {{ biography }}
+      </p>
     </div>
-    <hr class="my-4" />
-    <p class="text-neutral-500 text-base transform ease-in-out">
-      {{ biography }}
-    </p>
+
+    <div>
+      <h2 class="mt-8 text-2xl font-bold">Aptitudes y conocimientos</h2>
+      <div class="mt-4 space-y-2">
+        <li class="ml-12 grid grid-cols-2">
+          <span class="text-lg font-semibold">Autocad</span>
+          <app-progress-bar [barWidth]="85" />
+        </li>
+
+        <li class="ml-12 grid grid-cols-2">
+          <span class="text-lg font-semibold">RhinoCeros 6 + V-ray</span>
+          <app-progress-bar [barWidth]="85" />
+        </li>
+
+        <li class="ml-12 grid grid-cols-2">
+          <span class="text-lg font-semibold">3ds Max</span>
+          <app-progress-bar [barWidth]="80" />
+        </li>
+
+        <li class="ml-12 grid grid-cols-2">
+          <span class="text-lg font-semibold">Photoshop</span>
+          <app-progress-bar [barWidth]="75" />
+        </li>
+
+        <li class="ml-12 grid grid-cols-2">
+          <span class="text-lg font-semibold">Adobe InDesign</span>
+          <app-progress-bar [barWidth]="65" />
+        </li>
+
+        <li class="ml-12 grid grid-cols-2">
+          <span class="text-lg font-semibold">Adobe Lightroom</span>
+          <app-progress-bar [barWidth]="60" />
+        </li>
+
+        <li class="ml-12 grid grid-cols-2">
+          <span class="text-lg font-semibold">Adobe Illustrator</span>
+          <app-progress-bar [barWidth]="60" />
+        </li>
+        <li class="ml-12 grid grid-cols-2">
+          <span class="text-lg font-semibold">Revit</span>
+          <app-progress-bar [barWidth]="55" />
+        </li>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-end">
+    <img
+      src="profile.jpg"
+      alt="Profile photo"
+      class="w-[46rem] h-[44rem] select-none focus:outline-none"
+    />
   </div>
 </div>

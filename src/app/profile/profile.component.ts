@@ -7,17 +7,19 @@ import {
 } from '@angular/core';
 import { NgClass, NgOptimizedImage } from '@angular/common';
 import { TimelineComponent } from '../timeline/timeline.component';
+import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [],
+  imports: [ProgressBarComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
 })
 export class ProfileComponent implements OnInit {
   biography =
-    'Soy un arquitecto apasionado por la creación de espacios que fusionan funcionalidad, estética y sostenibilidad. Con más de [X] años de experiencia en el diseño arquitectónico y visualización, me especializo en la transformación de ideas en impresionantes representaciones gráficas. A lo largo de mi carrera, he trabajado en diversos proyectos, desde viviendas y oficinas hasta espacios comerciales y públicos, siempre enfocándome en contar una historia a través del diseño.';
+    'Arquitecto junior apasionado por el diseño innovador y la sostenibilidad. Recién graduado en Arquitectura con especial interés en la creación de espacios funcionales y estéticamente impactantes. Durante mi formación, desarrollé habilidades en diseño conceptual, modelado 3D y software como AutoCAD, Revit y SketchUp, complementadas con conocimientos en construcción sostenible y eficiencia energética.\n' +
+    '\nHe participado en proyectos académicos que integran soluciones creativas con enfoque social y ambiental, destacándome por mi atención al detalle y capacidad para trabajar en equipo. Busco oportunidades para aplicar mi creatividad y habilidades técnicas en el desarrollo de proyectos arquitectónicos que impacten positivamente en las comunidades.';
 
   showCard = false;
 
