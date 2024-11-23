@@ -12,16 +12,9 @@ import { bootstrapChevronDown } from '@ng-icons/bootstrap-icons';
 })
 export class PopOverComponent {
   showPopover = false;
-  popoverTop = 0;
-  popoverLeft = 4;
+  popoverTop = 5;
+  popoverRight = -2;
 
   @ViewChild('trigger', { static: true }) triggerElement!: ElementRef;
   @ViewChild('popover', { static: true }) popoverElement!: ElementRef;
-
-  calculatePopoverPosition(event: MouseEvent): void {
-    const triggerRect = (event.target as HTMLElement).getBoundingClientRect();
-    this.popoverTop = triggerRect.bottom + window.scrollY + 10;
-    this.popoverLeft =
-      triggerRect.left + window.scrollX + triggerRect.width / 2 - 128;
-  }
 }

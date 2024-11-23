@@ -1,21 +1,17 @@
 <div
-  class="absolute left-1/2 bottom-10 transform -translate-x-1/2 bg-gray-100 w-12 h-12 hover:bg-gray-200 duration-300 transition rounded-full flex items-center justify-center cursor-pointer"
+  class="absolute left-1/2 bottom-10 transform -translate-x-1/2 w-16 h-16 hover:bg-gray-200 duration-300 transition rounded-full flex items-center justify-center cursor-pointer"
   (mouseenter)="showPopover = true"
   (mouseleave)="showPopover = false"
 >
-  <ng-icon name="bootstrapChevronDown" class="text-2xl text-gray-400"></ng-icon>
+  <ng-icon name="bootstrapChevronDown" class="text-5xl text-neutral-800"></ng-icon>
   <div
-    class="absolute z-10 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-lg px-4 py-2 w-64 text-sm text-gray-500"
+    class="absolute z-10 transition-opacity duration-300 opacity-80 bg-gray-300 border border-gray-400 rounded-lg shadow-lg text-center px-4 py-2 w-32 text-sm text-gray-500"
     [class.invisible]="!showPopover"
     [class.opacity-0]="!showPopover"
     [class.opacity-100]="showPopover"
     [style.bottom.rem]="popoverTop"
-    [style.left.rem]="popoverLeft"
+    [style.right.rem]="popoverRight"
   >
-    <span class="font-semibold text-lg text-gray-900 mb-2">Pínchame !</span>
-    <p>
-      Aquí vas a poder ver la variedad de proyectos que he ido desarrollando a
-      lo largo del tiempo.
-    </p>
+    <span class="font-semibold text-lg text-gray-900 mb-2">Pínchame</span>
   </div>
 </div>

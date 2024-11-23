@@ -1,9 +1,8 @@
 @font-face {
-  font-family: "Helvetica";
-  src:
-    url("fonts/Helvetica.ttf") format("woff2"),
-    url("fonts/Helvetica-Bold.ttf") format("woff"),
-    url("fonts/Helvetica-BoldOblique.ttf") format("truetype");
+  font-family: "Koliko";
+  src: url("fonts/koliko-Light.ttf") format("truetype"),
+  url("fonts/koliko-Bold.ttf") format("truetype"),
+  url("fonts/koliko-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -14,5 +13,6 @@
 
 body {
   background-color: seashell;
-  font-family: "Helvetica", sans-serif;
+  font-family: "Koliko", sans-serif;
+  letter-spacing: 0.25rem;
 }
