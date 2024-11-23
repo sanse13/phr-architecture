@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         koliko: ["Koliko", "sans-serif"],
+        helvetica: ["Helvetica", "Arial", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
     },
     colors: {
