@@ -1,12 +1,13 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
   bootstrapArrowLeftCircle,
   bootstrapArrowRightCircle,
   bootstrapChevronLeft,
   bootstrapChevronRight,
+  bootstrapHouseDoor,
 } from '@ng-icons/bootstrap-icons';
 
 interface Image {
@@ -17,12 +18,16 @@ interface Image {
 @Component({
   selector: 'app-photo-gallery',
   standalone: true,
-  imports: [NgOptimizedImage, NgIcon],
+  imports: [NgOptimizedImage, NgIcon, RouterLink],
   templateUrl: './photo-gallery.component.html',
   styleUrls: ['./photo-gallery.component.scss'],
   viewProviders: [
     NgOptimizedImage,
-    provideIcons({ bootstrapChevronLeft, bootstrapChevronRight }),
+    provideIcons({
+      bootstrapChevronLeft,
+      bootstrapChevronRight,
+      bootstrapHouseDoor,
+    }),
   ],
 })
 export class PhotoGalleryComponent implements OnInit {
@@ -100,4 +105,6 @@ export class PhotoGalleryComponent implements OnInit {
     this.currentIndex = (this.currentIndex + 1) % this.images.length;
     this.currentImage = this.images[this.currentIndex];
   }
+
+  protected readonly bootstrapHouseDoor = bootstrapHouseDoor;
 }
