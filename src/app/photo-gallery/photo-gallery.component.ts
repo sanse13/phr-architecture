@@ -123,5 +123,15 @@ export class PhotoGalleryComponent implements OnInit {
     }, 100);
   }
 
+  goToImage(index: number) {
+    this.animationClass = '';
+
+    setTimeout(() => {
+      this.currentIndex = index;
+      this.currentImage = this.images[this.currentIndex];
+      this.animationClass = 'animate-slideInRight';
+    }, 50);
+  }
+
   protected readonly bootstrapHouseDoor = bootstrapHouseDoor;
 }
