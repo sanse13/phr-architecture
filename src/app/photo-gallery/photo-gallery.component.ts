@@ -1,5 +1,5 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+import { NgClass, NgOptimizedImage } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
@@ -9,6 +9,7 @@ import {
   bootstrapChevronRight,
   bootstrapHouseDoor,
 } from '@ng-icons/bootstrap-icons';
+import { initFlowbite } from 'flowbite';
 
 interface Image {
   src: string;
@@ -34,12 +35,14 @@ export class PhotoGalleryComponent implements OnInit {
   @Input() id!: string;
   images: Image[] = [];
   currentImage!: Image;
+  animationClass = '';
 
   currentIndex: number = 0;
   private readonly router = inject(Router);
 
   ngOnInit(): void {
     this.buildImages();
+    initFlowbite();
 
     this.currentImage = this.images[this.currentIndex];
   }
@@ -93,17 +96,31 @@ export class PhotoGalleryComponent implements OnInit {
   }
 
   previousImage() {
-    this.currentIndex =
-      (this.currentIndex - 1 + this.images.length) % this.images.length;
-    this.currentImage = this.images[this.currentIndex];
+    this.animationClass = '';
+
+    setTimeout(() => {
+      this.currentIndex =
+        (this.currentIndex - 1 + this.images.length) % this.images.length;
+
+      this.currentImage = this.images[this.currentIndex];
+
+      this.animationClass = 'animate-slideInLeft';
+    }, 100);
   }
 
   nextImage() {
-    if (this.currentIndex === this.images.length - 1) {
-      void this.router.navigateByUrl('/');
-    }
-    this.currentIndex = (this.currentIndex + 1) % this.images.length;
-    this.currentImage = this.images[this.currentIndex];
+    this.animationClass = '';
+
+    setTimeout(() => {
+      if (this.currentIndex === this.images.length - 1) {
+        void this.router.navigateByUrl('/');
+      } else {
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        this.currentImage = this.images[this.currentIndex];
+
+        this.animationClass = 'animate-slideInRight';
+      }
+    }, 100);
   }
 
   protected readonly bootstrapHouseDoor = bootstrapHouseDoor;

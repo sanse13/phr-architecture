@@ -10,14 +10,18 @@
       />
     </div>
     <div
-      class="max-w-full sm:flex hidden sm:flex-1 justify-center items-center"
+      class="max-w-full sm:flex hidden sm:flex-1 justify-center items-center overflow-hidden"
     >
       <img
+        id="animated-image"
         [ngSrc]="currentImage.src"
         width="1280"
         height="720"
         [alt]="currentImage.alt"
-        class="object-contain rounded-lg shadow-lg border-2 border-gray-300 select-none focus:outline-none"
+        [class]="
+          'object-contain rounded-lg shadow-lg border-2 border-gray-300 select-none focus:outline-none ' +
+          animationClass
+        "
       />
     </div>
     <div class="sm:hidden flex flex-col">
