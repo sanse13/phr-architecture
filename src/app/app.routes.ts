@@ -17,4 +17,8 @@ export const routes: Routes = [
     path: 'gallery/:id',
     component: PhotoGalleryComponent,
   },
+  {
+    path: 'contact',
+    component: ContactComponent,
+  },
 ];
