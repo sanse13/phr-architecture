@@ -18,8 +18,11 @@ import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
 })
 export class ProfileComponent implements OnInit {
   biography =
-    'Arquitecto junior apasionado por el diseño innovador y la sostenibilidad. Recién graduado en Arquitectura con especial interés en la creación de espacios funcionales y estéticamente impactantes. Durante mi formación, desarrollé habilidades en diseño conceptual, modelado 3D y software como AutoCAD, Revit y SketchUp, complementadas con conocimientos en construcción sostenible y eficiencia energética.\n' +
-    '\nHe participado en proyectos académicos que integran soluciones creativas con enfoque social y ambiental, destacándome por mi atención al detalle y capacidad para trabajar en equipo. Busco oportunidades para aplicar mi creatividad y habilidades técnicas en el desarrollo de proyectos arquitectónicos que impacten positivamente en las comunidades.';
+    'Arquitecto recién graduado con muchas ganas de crecer profesionalmente y seguir aprendiendo en este campo que me apasiona. Tengo experiencia en el manejo' +
+    ' de programas de modelado 3D como Rhinoceros y 3ds Max, además de Autocad y Photoshop, herramientas que me han permitido explorar y materializar ' +
+    'ideas creativas en proyectos académicos y personales.\n\n' +
+    'Me considero una persona proactiva, con facilidad para adaptarme a nuevos retos y aprender rápido. Disfruto trabajando en equipo y aportando soluciones prácticas ' +
+    'y creativas. Estoy listo para poner en práctica mis conocimientos y sumar valor en proyectos desafiantes que impulsen mi desarrollo.'
 
   showCard = false;
 
