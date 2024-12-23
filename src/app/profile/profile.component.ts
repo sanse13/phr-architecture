@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
     ' de programas de modelado 3D como Rhinoceros y 3ds Max, además de Autocad y Photoshop, herramientas que me han permitido explorar y materializar ' +
     'ideas creativas en proyectos académicos y personales.\n\n' +
     'Me considero una persona proactiva, con facilidad para adaptarme a nuevos retos y aprender rápido. Disfruto trabajando en equipo y aportando soluciones prácticas ' +
-    'y creativas. Estoy listo para poner en práctica mis conocimientos y sumar valor en proyectos desafiantes que impulsen mi desarrollo.'
+    'y creativas. Estoy listo para poner en práctica mis conocimientos y sumar valor en proyectos desafiantes que impulsen mi desarrollo.';
 
   showCard = false;
 

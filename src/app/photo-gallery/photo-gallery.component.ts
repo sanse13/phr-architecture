@@ -1,12 +1,12 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
-import { NgClass, NgOptimizedImage } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
-  bootstrapArrowLeftCircle,
-  bootstrapArrowRightCircle,
   bootstrapChevronLeft,
   bootstrapChevronRight,
+  bootstrapFullscreen,
+  bootstrapFullscreenExit,
   bootstrapHouseDoor,
 } from '@ng-icons/bootstrap-icons';
 import { initFlowbite } from 'flowbite';
@@ -14,6 +14,11 @@ import { initFlowbite } from 'flowbite';
 interface Image {
   src: string;
   alt: string;
+}
+
+export enum ResizeImage {
+  maximize = 'maximize',
+  minimize = 'minimize',
 }
 
 @Component({
@@ -28,6 +33,8 @@ interface Image {
       bootstrapChevronLeft,
       bootstrapChevronRight,
       bootstrapHouseDoor,
+      bootstrapFullscreen,
+      bootstrapFullscreenExit,
     }),
   ],
 })
@@ -38,7 +45,8 @@ export class PhotoGalleryComponent implements OnInit {
   animationClass = '';
 
   currentIndex: number = 0;
-  private readonly router = inject(Router);
+
+  onResizeImage: ResizeImage = ResizeImage.minimize;
 
   ngOnInit(): void {
     this.buildImages();
@@ -112,14 +120,10 @@ export class PhotoGalleryComponent implements OnInit {
     this.animationClass = '';
 
     setTimeout(() => {
-      if (this.currentIndex === this.images.length - 1) {
-        void this.router.navigateByUrl('/');
-      } else {
-        this.currentIndex = (this.currentIndex + 1) % this.images.length;
-        this.currentImage = this.images[this.currentIndex];
+      this.currentIndex = (this.currentIndex + 1) % this.images.length;
+      this.currentImage = this.images[this.currentIndex];
 
-        this.animationClass = 'animate-slideInRight';
-      }
+      this.animationClass = 'animate-slideInRight';
     }, 100);
   }
 
@@ -133,5 +137,18 @@ export class PhotoGalleryComponent implements OnInit {
     }, 50);
   }
 
+  toggleResizeImage(): void {
+    console.log(this.onResizeImage);
+
+    if (this.onResizeImage === ResizeImage.minimize) {
+      this.onResizeImage = ResizeImage.maximize;
+    } else {
+      this.onResizeImage = ResizeImage.minimize;
+    }
+
+    console.log(this.onResizeImage);
+  }
+
   protected readonly bootstrapHouseDoor = bootstrapHouseDoor;
+  protected readonly ResizeImage = ResizeImage;
 }
