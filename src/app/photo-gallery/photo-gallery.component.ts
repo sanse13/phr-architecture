@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
@@ -10,6 +10,7 @@ import {
   bootstrapHouseDoor,
 } from '@ng-icons/bootstrap-icons';
 import { initFlowbite } from 'flowbite';
+import { BackButtonComponent } from '../back-button/back-button.component';
 
 interface Image {
   src: string;
@@ -24,7 +25,7 @@ export enum ResizeImage {
 @Component({
   selector: 'app-photo-gallery',
   standalone: true,
-  imports: [NgOptimizedImage, NgIcon, RouterLink],
+  imports: [NgOptimizedImage, NgIcon, RouterLink, BackButtonComponent],
   templateUrl: './photo-gallery.component.html',
   styleUrls: ['./photo-gallery.component.scss'],
   viewProviders: [
@@ -47,6 +48,23 @@ export class PhotoGalleryComponent implements OnInit {
   currentIndex: number = 0;
 
   onResizeImage: ResizeImage = ResizeImage.minimize;
+
+  @HostListener('document:keydown.escape', ['$event'])
+  handleEscapeKey(): void {
+    if (this.onResizeImage === ResizeImage.maximize) {
+      this.onResizeImage = ResizeImage.minimize;
+      this.animationClass = '';
+    }
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    if (event.key === 'ArrowRight') {
+      this.nextImage();
+    } else if (event.key === 'ArrowLeft') {
+      this.previousImage();
+    }
+  }
 
   ngOnInit(): void {
     this.buildImages();
@@ -138,15 +156,12 @@ export class PhotoGalleryComponent implements OnInit {
   }
 
   toggleResizeImage(): void {
-    console.log(this.onResizeImage);
-
+    this.animationClass = '';
     if (this.onResizeImage === ResizeImage.minimize) {
       this.onResizeImage = ResizeImage.maximize;
     } else {
       this.onResizeImage = ResizeImage.minimize;
     }
-
-    console.log(this.onResizeImage);
   }
 
   protected readonly bootstrapHouseDoor = bootstrapHouseDoor;
