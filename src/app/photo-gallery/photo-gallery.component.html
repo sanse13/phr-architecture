@@ -14,14 +14,14 @@
       class="absolute bg-gray-400 p-2 rounded-lg text-white bottom-4 right-6 text-2xl hover:cursor-pointer hidden sm:flex hover:scale-125"
       (click)="toggleResizeImage()"
     >
-      <ng-icon name="bootstrapFullscreenExit" />
+      <ng-icon name="bootstrapFullscreenExit"/>
     </div>
   </div>
 
   <div class="my-2">
     <div class="flex-row flex items-center justify-center">
       <div class="absolute left-4">
-        <app-back-button />
+        <app-back-button/>
       </div>
       <ng-icon
         class="transform hover:scale-125 ease-in-out cursor-pointer duration-200 text-2xl"
@@ -76,7 +76,7 @@
             class="absolute bg-gray-400 p-2 rounded-lg text-white bottom-4 right-6 text-2xl hover:cursor-pointer hidden sm:flex hover:scale-125"
             (click)="toggleResizeImage()"
           >
-            <ng-icon name="bootstrapFullscreen" />
+            <ng-icon name="bootstrapFullscreen"/>
           </div>
         </div>
       </div>
@@ -100,6 +100,9 @@
         "
       ></button>
     }
+    <div class="bg-primary !ml-4 rounded-lg p-2 cursor-pointer flex" [routerLink]="['/']">
+      <ng-icon name="bootstrapHouseDoor" class="text-xl text-white"/>
+    </div>
   </div>
   <div class="sm:hidden flex flex-col items-center px-4 pt-24">
     @for (image of images; track image) {
@@ -117,7 +120,7 @@
       [routerLink]="'/'"
     >
       <span>Volver atrás</span>
-      <ng-icon name="bootstrapHouseDoor" class="text-white text-lg ml-2" />
+      <ng-icon name="bootstrapHouseDoor" class="text-white text-lg ml-2"/>
     </button>
   </div>
 }
