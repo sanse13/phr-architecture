@@ -9,7 +9,6 @@ import {
   bootstrapFullscreenExit,
   bootstrapHouseDoor,
 } from '@ng-icons/bootstrap-icons';
-import { initFlowbite } from 'flowbite';
 import { BackButtonComponent } from '../back-button/back-button.component';
 
 interface Image {
@@ -67,8 +66,13 @@ export class PhotoGalleryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      document.documentElement.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }, 100);
     this.buildImages();
-    initFlowbite();
 
     this.currentImage = this.images[this.currentIndex];
   }
