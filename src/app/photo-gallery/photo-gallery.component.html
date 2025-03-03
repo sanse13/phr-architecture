@@ -47,6 +47,7 @@
     </div>
   </div>
 } @else {
+  <!-- html code for bigger screens  -->
   <div class="hidden sm:flex items-center justify-center">
     <div class="w-full max-w-[100rem] h-screen px-4 flex flex-row items-center">
       <div class="hidden sm:block">
@@ -90,6 +91,8 @@
       </div>
     </div>
   </div>
+
+  <!-- html code for bigger screens like laptops -->
   <div class="hidden sm:flex justify-center -mt-12 items-center space-x-2">
     @for (image of images; track image) {
       <button
@@ -100,7 +103,15 @@
         "
       ></button>
     }
+    <div
+      class="bg-primary !ml-4 rounded-lg p-2 cursor-pointer flex"
+      [routerLink]="['/']"
+    >
+      <ng-icon name="bootstrapHouseDoor" class="text-xl text-white" />
+    </div>
   </div>
+
+  <!--  html code for smaller screens like mobile ones -->
   <div class="sm:hidden flex flex-col items-center px-4 pt-24">
     @for (image of images; track image) {
       <img
